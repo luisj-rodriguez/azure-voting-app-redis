@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: luisjrodriguezazurevotingappredis 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: luisjrodriguezazurevotingappredis
+  template:
+    metadata:
+      labels:
+        app: luisjrodriguezazurevotingappredis 
+    spec:
+      containers:
+        - name: luisjrodriguezazurevotingappredis 
+          image: demojala.azurecr.io/luisjrodriguezazurevotingappredis
+          ports:
+          - containerPort: 80
